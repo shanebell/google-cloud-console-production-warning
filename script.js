@@ -46,23 +46,23 @@ function showMessage() {
 		div.style['position'] = 'absolute';
 		div.style['top'] = '50vh';
 		div.style['width'] = '100%';
-		div.style['height'] = '0';
 		div.style['text-align'] = 'center';
 		div.style['margin'] = '0 auto';
 		div.style['z-index'] = '1000';
 
-		var span = document.createElement('span');
-		span.style['color'] = 'red';
-		span.style['font-weight'] = 'bold';
-		span.style['font-size'] = '100px';
-		span.style['opacity'] = '0.1';
-		span.style['pointer-events'] = 'none';
+		var innerDiv = document.createElement('div');
+		innerDiv.style['color'] = 'red';
+		innerDiv.style['font-weight'] = 'bold';
+		innerDiv.style['font-size'] = '100px';
+		innerDiv.style['opacity'] = '0.1';
+		innerDiv.style['pointer-events'] = 'none';
+		innerDiv.style['transform'] = 'translateY(-50%)';
 
 		var message = document.createTextNode("PRODUCTION");
 
-		span.appendChild(message);
+		innerDiv.appendChild(message);
 
-		div.appendChild(span);
+		div.appendChild(innerDiv);
 
 		document.body.appendChild(div);
 	}
