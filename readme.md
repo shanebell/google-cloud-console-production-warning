@@ -8,3 +8,13 @@ A project is considered a production project if it ends with "-prod".
 The plugin runs on all http://console.cloud.google.com pages.
 
 ![Screenshot](screenshot.png)
+
+## Installation ##
+
+- Clone this repository
+- Open Chrome and navigate to chrome://extensions
+- Ensure "Developer mode" is enabled
+- Click "Load unpacked extension..."
+- Select the directory where this repository is cloned to
+
+The extension will run automatically whenever you have the Google Cloud Console open.
