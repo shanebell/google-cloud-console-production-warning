@@ -5,10 +5,19 @@
   "permissions": [
     "activeTab"
   ],
+  "icons": {
+    "16": "icon16x16.png",
+    "48": "icon48x48.png",
+    "128": "icon128x128.png"
+  },
   "content_scripts": [
     {
-      "matches": [ "https://console.cloud.google.com/*" ],
-      "js": [ "script.js" ]
+      "matches": [
+        "https://console.cloud.google.com/*"
+      ],
+      "js": [
+        "script.js"
+      ]
     }
   ],
   "manifest_version": 2
