@@ -9,7 +9,11 @@ The plugin runs on all http://console.cloud.google.com pages.
 
 ![Screenshot](screenshot.png)
 
-## Installation ##
+## Installation via the Chrome web store ##
+
+Install from here: https://chrome.google.com/webstore/detail/google-cloud-console-prod/dpihknlpffbpjaegjocpbgdickpjiohl
+
+## Manual installation ##
 
 - Clone this repository
 - Open Chrome and navigate to chrome://extensions
