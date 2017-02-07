@@ -1,7 +1,7 @@
 {
   "name": "Google Cloud Console Production Warning",
   "description": "Show a warning when viewing a production environment in the Google Cloud Console.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "permissions": [
     "activeTab"
   ],
@@ -13,7 +13,8 @@
   "content_scripts": [
     {
       "matches": [
-        "https://console.cloud.google.com/*"
+        "https://console.cloud.google.com/*",
+        "https://*.appspot.com/_ah/datastore_admin*"
       ],
       "js": [
         "script.js"

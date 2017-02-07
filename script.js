@@ -27,12 +27,23 @@ function checkCloudProject(href) {
 
 function isProductionProject(href) {
 
+	var projectName = '';
+
 	// A Cloud Project URL looks like this:
 	// https://console.cloud.google.com/appengine?project=PROJECT_NAME
+	if (href.startsWith('https://console.cloud.google.com')) {
 
-	// get the project name from the URL
-	var matches = /project=([\w-]+)/.exec(href);
-	var projectName = matches[1] || '';
+		var matches = /project=([\w-]+)/.exec(href);
+        projectName = matches[1] || '';
+	}
+
+    // An AppEngine datastore admin URL looks like this:
+    // https://ah-builtin-python-bundle-dot-PROJECT_NAME.appspot.com/_ah/datastore_admin
+	else if (href.startsWith("https://ah-builtin-python-bundle")) {
+
+		var matches = /ah-builtin-python-bundle-dot-([\w-]+)\.appspot\.com/.exec(href);
+        projectName = matches[1] || '';
+	}
 
 	return projectName && projectName.endsWith('-prod');
 }
@@ -43,7 +54,7 @@ function showMessage() {
 
 		var div = document.createElement('div');
 		div.id = 'production-warning-message';
-		div.style['position'] = 'absolute';
+		div.style['position'] = 'fixed';
 		div.style['top'] = '50vh';
 		div.style['width'] = '100%';
 		div.style['text-align'] = 'center';
