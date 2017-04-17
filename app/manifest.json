@@ -1,14 +1,19 @@
 {
   "name": "Google Cloud Console Production Warning",
   "description": "Show a warning when viewing a production environment in the Google Cloud Console.",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "storage"
   ],
   "icons": {
-    "16": "icon16x16.png",
-    "48": "icon48x48.png",
-    "128": "icon128x128.png"
+    "16": "images/icon16x16.png",
+    "48": "images/icon48x48.png",
+    "128": "images/icon128x128.png"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
   },
   "content_scripts": [
     {
@@ -17,7 +22,10 @@
         "https://*.appspot.com/_ah/datastore_admin*"
       ],
       "js": [
-        "script.js"
+        "scripts/storage.js",
+        "scripts/script.js",
+        "lib/jquery/dist/jquery.min.js",
+        "lib/lodash/dist/lodash.min.js"
       ]
     }
   ],

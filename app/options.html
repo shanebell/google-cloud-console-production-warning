@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<!--
+   Copyright 2017 Shane Bell
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+ -->
+
+<html>
+
+<body>
+
+<div id="confirmation-message">
+    Options saved
+</div>
+
+<div id="error-message">
+    Please correct the fields in red below.<br>
+    All fields are mandatory.
+</div>
+
+<div>
+    <h2>Watermark</h2>
+    <p class="help">The text of the watermark</p>
+    <input type="text" id="message" maxlength="20">
+</div>
+
+<div>
+    <h2>Color</h2>
+    <p class="help">The color of the watermark</p>
+    <input type="color" id="color">
+</div>
+
+<div id="patterns">
+    <h2>Project name patterns</h2>
+    <p class="help">
+        Regular expressions that match your production project names<br>
+    </p>
+</div>
+
+<a href="#" id="add-pattern">+ Add pattern</a>
+
+<hr>
+
+<button id="save-options">Save</button>
+
+<p class="help">
+    Note: refresh the Google Cloud Console to see updated options.
+</p>
+
+<a href="#" id="restore-defaults">Restore defaults</a>
+
+<link href="css/options.css" rel="stylesheet">
+<script type="text/javascript" src="lib/lodash/dist/lodash.min.js"></script>
+<script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/storage.js"></script>
+<script type="text/javascript" src="scripts/options.js"></script>
+
+</body>
+
+</html>
