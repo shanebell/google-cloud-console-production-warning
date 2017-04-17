@@ -3,7 +3,4 @@ package
 dist
 node_modules
 bower_components
-app/css
-app/fonts
-app/lib
 

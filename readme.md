@@ -29,10 +29,10 @@ Install from here: https://chrome.google.com/webstore/detail/google-cloud-consol
 
 - Clone this repository
 - `$ npm install`
-- `$ grunt`
+- `$ grunt dist`
 - Open Chrome and navigate to chrome://extensions
 - Ensure "Developer mode" is enabled
 - Click "Load unpacked extension..."
-- Select the directory where this repository is cloned to
+- Select the `package` directory where the plugin is compiled to by grunt
 
 The extension will run automatically whenever you have the Google Cloud Console open.
