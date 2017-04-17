@@ -28,6 +28,8 @@ Install from here: https://chrome.google.com/webstore/detail/google-cloud-consol
 ## Manual installation ##
 
 - Clone this repository
+- `$ npm install`
+- `$ grunt`
 - Open Chrome and navigate to chrome://extensions
 - Ensure "Developer mode" is enabled
 - Click "Load unpacked extension..."
