@@ -1,23 +1,23 @@
-'use strict';
+"use strict";
 
 module.exports = function (grunt) {
 
-	require('load-grunt-tasks')(grunt);
+	require("load-grunt-tasks")(grunt);
 
 	grunt.initConfig({
 
 		// clean build artifacts
 		clean: {
 			bower: {
-				src: 'bower_components',
+				src: "bower_components",
 				dot: true
 			},
 			package: {
-				src: 'package',
+				src: "package",
 				dot: true
 			},
 			dist: {
-				src: 'dist',
+				src: "dist",
 				dot: true
 			}
 		},
@@ -26,13 +26,13 @@ module.exports = function (grunt) {
 		bower: {
 			install: {
 				options: {
-					targetDir: 'package/lib',
+					targetDir: "package/lib",
 					verbose: true,
 					layout: function(type, component, source) {
-						grunt.log.ok('type: %s, component: %s, source: %s', type, component, source);
-						var tokens = source.split('/');
+						grunt.log.ok("type: %s, component: %s, source: %s", type, component, source);
+						var tokens = source.split("/");
 						var end = tokens.length < 3 ? tokens.length : tokens.length - 1;
-						var layout = tokens.slice(1, end).join('/');
+						var layout = tokens.slice(1, end).join("/");
 						grunt.log.ok(layout);
 						return layout;
 					}
@@ -49,10 +49,10 @@ module.exports = function (grunt) {
 				},
 				files: [
 					{
-						cwd: 'app',
-						src: ['less/*.less'],
-						dest: 'package/css/',
-						ext: '.css',
+						cwd: "app",
+						src: ["less/*.less"],
+						dest: "package/css/",
+						ext: ".css",
 						flatten: true,
 						expand: true
 					}
@@ -67,13 +67,15 @@ module.exports = function (grunt) {
 					{
 						expand: true,
 						dot: true,
-						cwd: 'app',
-						dest: 'package',
+						cwd: "app",
+						dest: "package",
 						src: [
-							'images/**/*.png',
-							'scripts/**/*',
-							'*.html',
-							'manifest.json'
+                            "*.html",
+							"images/icon16x16.png",
+							"images/icon48x48.png",
+        					"images/icon128x128.png",
+							"javascript/*.js",
+							"manifest.json"
 						]
 					}
 				]
@@ -85,16 +87,16 @@ module.exports = function (grunt) {
 			dist: {
 				options: {
 					archive: function () {
-						var manifest = grunt.file.readJSON('package/manifest.json');
-						return 'dist/google-cloud-console-production-warning-' + manifest.version + '.zip';
+						var manifest = grunt.file.readJSON("package/manifest.json");
+						return "dist/google-cloud-console-production-warning-" + manifest.version + ".zip";
 					}
 				},
 				files: [
 					{
 						expand: true,
-						cwd: 'package/',
-						src: ['**'],
-						dest: ''
+						cwd: "package/",
+						src: ["**"],
+						dest: ""
 					}
 				]
 			}
@@ -103,45 +105,45 @@ module.exports = function (grunt) {
 		// watch files for changes
 		watch: {
 			bower: {
-				files: ['bower.json'],
-				tasks: ['bower', 'copy']
+				files: ["bower.json"],
+				tasks: ["bower", "copy"]
 			},
 			html: {
-				files: ['app/*.html'],
-				tasks: ['copy']
+				files: ["app/*.html"],
+				tasks: ["copy"]
 			},
 			manifest: {
-				files: ['app/manifest.json'],
-				tasks: ['copy']
+				files: ["app/manifest.json"],
+				tasks: ["copy"]
 			},
 			less: {
-				files: ['app/less/*.less'],
-				tasks: ['less', 'copy']
+				files: ["app/less/*.less"],
+				tasks: ["less", "copy"]
 			},
 			images: {
-				files: ['app/images/{,*/}*.*'],
-				tasks: ['copy']
+				files: ["app/images/{,*/}*.*"],
+				tasks: ["copy"]
 			},
 			js: {
-				files: ['app/scripts/{,*/}*.js'],
-				tasks: ['copy']
+				files: ["app/javascript/{,*/}*.js"],
+				tasks: ["copy"]
 			}
 		}
 	});
 
-	grunt.registerTask('default', [
-		'clean',
-		'bower',
-		'less',
-		'copy',
-		'watch'
+	grunt.registerTask("default", [
+		"clean",
+		"bower",
+		"less",
+		"copy",
+		"watch"
 	]);
 
-	grunt.registerTask('dist', [
-		'clean',
-		'bower',
-		'less',
-		'copy',
-		'compress'
+	grunt.registerTask("dist", [
+		"clean",
+		"bower",
+		"less",
+		"copy",
+		"compress"
 	]);
 };

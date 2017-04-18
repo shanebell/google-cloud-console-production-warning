@@ -21,9 +21,6 @@ function loadOptions() {
 }
 
 function setOptions(options) {
-
-    console.log("Setting options: %o", options);
-
     $("#message").val(options.message);
 
     $("#color").val(options.color);
@@ -149,7 +146,6 @@ function resetForm() {
 }
 
 function restoreDefaults() {
-    console.log("Restore defaults");
     setOptions(defaultOptions());
 }
 

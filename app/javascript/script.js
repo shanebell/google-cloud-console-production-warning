@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-console.log("Google Cloud Console production warning");
-
 var href = "";
 
 function watchHref(options) {
