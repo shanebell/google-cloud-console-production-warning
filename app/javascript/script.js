@@ -72,6 +72,7 @@ function showMessage(options) {
         div.css("text-align", "center");
         div.css("margin", "0 auto");
         div.css("z-index", "1000");
+        div.css("pointer-events", "none");
 
         var innerDiv = $("<div></div>");
         innerDiv.text(options.message);
@@ -79,7 +80,6 @@ function showMessage(options) {
         innerDiv.css("font-weight", "bold");
         innerDiv.css("font-size", "100px");
         innerDiv.css("opacity", "0.1");
-        innerDiv.css("pointer-events", "none");
         innerDiv.css("transform", "translateY(-50%)");
 
         div.append(innerDiv);
