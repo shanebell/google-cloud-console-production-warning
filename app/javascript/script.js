@@ -56,6 +56,13 @@ function isProductionProject(href, options) {
         projectName = matches[1] || "";
 	}
 
+	// A Stackdriver URL looks like this:
+    // https://app.google.stackdriver.com/?authuser=1&organizationId=12345&project=PROJECT_NAME
+    else if (href.startsWith("https://app.google.stackdriver.com")) {
+        var matches = /project=([\w-]+)/.exec(href);
+        projectName = matches[1] || "";
+    }
+
 	// check if the project name matches any of the patterns
 	return _.some(options.patterns, function(pattern) {
 		return projectName.match(pattern);

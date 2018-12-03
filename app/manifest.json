@@ -1,7 +1,7 @@
 {
   "name": "Google Cloud Console Production Warning",
-  "description": "Show a warning when viewing a production environment in the Google Cloud Console.",
-  "version": "1.1.2",
+  "description": "Show a warning when viewing a production environment in the Google Cloud Console, Datastore admin or Stackdriver.",
+  "version": "1.1.3",
   "permissions": [
     "activeTab",
     "storage"
@@ -19,7 +19,8 @@
     {
       "matches": [
         "https://console.cloud.google.com/*",
-        "https://*.appspot.com/_ah/datastore_admin*"
+        "https://*.appspot.com/_ah/datastore_admin*",
+        "https://app.google.stackdriver.com/*"
       ],
       "js": [
         "javascript/storage.js",
